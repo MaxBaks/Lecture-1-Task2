@@ -1,6 +1,6 @@
-"use strict";
 
-const showBalance = (value) => {     
+const showBalance = (strings, value) => {  
+    const balance = strings[0];
     let balanceType;
     switch(value) {
         case 523: 
@@ -13,5 +13,14 @@ const showBalance = (value) => {
             balanceType = "баллов";
             break;
     }
-    $('#finalText').html(`Ваш баланс: ${value} ${balanceType}`);
+    
+    return `${balance}${value} ${balanceType}`;
 }
+
+const test = [523, 6000, 5001, 5013];
+for (let item of test){
+    let value = item;
+    const answer = showBalance`Ваш баланс: ${value}`;
+    console.log(answer);
+}
+
